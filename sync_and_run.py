@@ -42,8 +42,8 @@ def main():
             with open('/mnt/input/config.yml') as f:
                 config = yaml.load(f, Loader=yaml.Loader)
         else:
-            raise ValueError('''A CONFIG environment variable or an S3 config
-                                object must be provided''')
+            raise ValueError('A CONFIG environment variable or an S3 config'
+                             'object must be provided')
 
         # Sync the inputs from S3
         for input in config['inputs']:
@@ -63,7 +63,7 @@ def main():
 
     except Exception as e:
         print(e)
-        return 1
+        sys.exit(1)
 
 
 if __name__ == "__main__":
